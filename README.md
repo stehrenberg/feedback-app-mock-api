@@ -51,3 +51,21 @@ Always returns
     ]
 }
 ```
+
+### /api/v2/feedback_db/_table/projects
+#### GET
+Always returns
+```
+{
+    resource: [
+      {
+        project_id: '1',
+        project_name: 'Brontales Projekt'
+      },
+      {
+        project_id: '2',
+        project_name: 'Normales Projekt'
+      }
+    ]
+}
+```
