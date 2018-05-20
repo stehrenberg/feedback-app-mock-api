@@ -15,9 +15,10 @@ api.patch('/', (request, response) => {
   const changedTodos = request.body.resource;
   const responseArray = [];
   changedTodos.forEach(changedTodo => {
-    const todoToBePatched = allTodos.find(storedTodo => storedTodo.todo_id === changedTodo.todo_id);
-    todoToBePatched.completed = changedTodo.completed;
-    responseArray.push(todoToBePatched);
+    const todoIndexToBePatched = allTodos.findIndex(storedTodo => storedTodo.todo_id === changedTodo.todo_id);
+    allTodos[todoIndexToBePatched].completed = changedTodo.completed;
+    
+    responseArray.push(allTodos[todoIndexToBePatched]);
   });
 
   response.json({
