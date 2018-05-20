@@ -4,8 +4,15 @@ const express = require('express');
 const api = express();
 
 api.get('/', (request, response) => {
+  const projectName = request.projectName.toLowerCase();
+  const projectSurveyResults = allSurveyResults.filter(survey_result => {
+    const surveyIdPattern = survey_result.survey_id.match(/[0-9]*-(.*)/);
+    const surveyResultProjectName = surveyIdPattern[1].toLowerCase();
+    return surveyResultProjectName === projectName;
+  });
+
   response.json({
-    resource: allSurveyResults,
+    resource: projectSurveyResults,
   });
 });
 

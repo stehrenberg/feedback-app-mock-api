@@ -27,8 +27,15 @@ api.patch('/', (request, response) => {
 });
 
 api.get('/', (request, response) => {
+  const projectName = request.projectName.toLowerCase();
+  const projectTodos = allTodos.filter(todo => {
+    const surveyIdPattern = todo.survey_id.match(/[0-9]*-(.*)/);
+    const todoProjectName = surveyIdPattern[1].toLowerCase();
+    return todoProjectName === projectName;
+  });
+
   response.json({
-    resource: allTodos,
+    resource: projectTodos,
   });
 });
 
