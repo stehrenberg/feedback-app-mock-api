@@ -4,8 +4,11 @@ const express = require('express');
 const api = express();
 
 api.get('/', (request, response) => {
+  const projectName = request.projectName.toLowerCase();
+  const projectSurveys = allSurveys.filter(survey => survey.project_name.toLowerCase() === projectName);
+
   response.json({
-    resource: allSurveys,
+    resource: projectSurveys,
   });
 });
 

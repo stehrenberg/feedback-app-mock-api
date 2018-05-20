@@ -11,6 +11,10 @@ api.use(/^\/_table\/survey_result_(.*)$/, surveyResult);
 
 const survey = require('./_table/survey');
 api.use('/_table/survey', survey);
+api.use(/^\/_table\/survey_(.*)$/, (request, response, next) => {
+  request.projectName = request.params[0];
+  next();
+});
 api.use(/^\/_table\/survey_(.*)$/, survey);
 
 api.get('/_table/customer_projects/', (request, response) => {
