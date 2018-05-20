@@ -16,7 +16,13 @@ npm run dev
 ### /api/v2/user/session
 
 #### PUT
-Always returns
+If session_token provided, will return the session_token. Example: Session Token 1337 provided, will return
+```
+{
+    session_token: 1337
+}
+```
+otherwise will return
 ```
 {}
 ```

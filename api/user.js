@@ -4,6 +4,14 @@ const express = require('express');
 const api = express();
 
 api.put('/session', (request, response) => {
+  const session_token = request.body.session_token;
+  if (session_token != undefined) {
+    response.json({
+      session_token
+    });
+    return;
+  }
+
   response.json({});
 });
 
