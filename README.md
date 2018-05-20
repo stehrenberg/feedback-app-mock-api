@@ -11,6 +11,13 @@ npm start
 npm run dev
 ```
 
+## Server Params
+- PORT: HTTP Server Port (Default: 8080)
+- VERSION: API Version (Default: v2)
+```
+PORT=1337 VERSION=v4 npm start
+```
+
 ## API
 
 ### /api/v2/user/session
