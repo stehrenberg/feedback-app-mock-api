@@ -41,4 +41,10 @@ api.get('/_table/projects', (request, response) => {
   });
 });
 
+api.get(/^\/_table\/survey_(.*)$/, (request, response) => {
+  response.json({
+    resource: [],
+  });
+});
+
 module.exports = api;
