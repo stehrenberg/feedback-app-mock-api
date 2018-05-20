@@ -1,26 +1,37 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const process = require('process');
 
 const serverPort = process.env.PORT || 8080
 
 const api = express();
 
+// API consts
+const API_LOGIN_FAIL = 'fail';
+
 api.options('/user/session', (request, response) => {
   response.send('Huhu');
 });
 
 api.put('/user/session', (request, response) => {
-  response.send({});
+  response.json({});
 });
 
 api.post('/user/session', (request, response) => {
-  response.send({
+  if (request.body.email === API_LOGIN_FAIL) {
+    response.sendStatus(403);
+    return;
+  }
+
+  response.json({
     session_token: '42'
-  })
+  });
 });
 
 const app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(function(request, response, next) {
   const allowedHeaders = [
     'Content-Type',
@@ -33,7 +44,6 @@ app.use(function(request, response, next) {
   response.header('Access-Control-Allow-Origin', '*');
   response.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
   response.header('Access-Control-Allow-Headers', allowedHeaders.join(','));
-  response.header('Content-Type', 'application/json');
 
   //intercepts OPTIONS method
   if ('OPTIONS' === request.method) {
