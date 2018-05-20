@@ -1,11 +1,9 @@
 const express = require('express');
 const api = express();
 
-api.get(/^\/_table\/todos_(.*)$/, (request, response) => {
-  response.json({
-    resource: [],
-  });
-});
+const todos = require('./_table/todos');
+api.use('/_table/todos', todos);
+api.use(/^\/_table\/todos_(.*)$/, todos);
 
 api.get('/_table/customer_projects/', (request, response) => {
   response.json({
