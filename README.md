@@ -35,3 +35,19 @@ Any other response will return
     session_token: 42
 }
 ```
+
+### /api/v2/feedback_db/_table/customer_projects
+#### GET
+Always returns
+```
+{
+    resource: [
+      {
+        project_id: '1'
+      },
+      {
+        project_id: '2'
+      }
+    ]
+}
+```

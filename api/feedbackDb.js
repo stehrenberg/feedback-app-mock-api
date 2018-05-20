@@ -9,7 +9,14 @@ api.get(/^\/_table\/todos_(\w+)$/, (request, response) => {
 
 api.get('/_table/customer_projects/', (request, response) => {
   response.json({
-    resource: [],
+    resource: [
+      {
+        project_id: '1'
+      },
+      {
+        project_id: '2'
+      }
+    ],
   });
 });
 
