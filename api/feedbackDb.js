@@ -1,7 +1,7 @@
 const express = require('express');
 const api = express();
 
-api.get(/^\/_table\/todos_(\w+)$/, (request, response) => {
+api.get(/^\/_table\/todos_(.*)$/, (request, response) => {
   response.json({
     resource: [],
   });
