@@ -5,6 +5,14 @@ const todos = require('./_table/todos');
 api.use('/_table/todos', todos);
 api.use(/^\/_table\/todos_(.*)$/, todos);
 
+const surveyResult = require('./_table/surveyResult');
+api.use('/_table/survey_result', surveyResult);
+api.use(/^\/_table\/survey_result_(.*)$/, surveyResult);
+
+const survey = require('./_table/survey');
+api.use('/_table/survey', survey);
+api.use(/^\/_table\/survey_(.*)$/, survey);
+
 api.get('/_table/customer_projects/', (request, response) => {
   response.json({
     resource: [
@@ -38,8 +46,5 @@ api.get('/_table/projects', (request, response) => {
     ],
   });
 });
-
-const surveyComplete = require('./_table/surveyComplete');
-surveyComplete(api);
 
 module.exports = api;
