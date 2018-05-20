@@ -1,4 +1,4 @@
-# API
+# react-questionnaire-api
 
 ## Setup
 ```
