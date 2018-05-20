@@ -41,10 +41,7 @@ api.get('/_table/projects', (request, response) => {
   });
 });
 
-api.get(/^\/_table\/survey_(.*)$/, (request, response) => {
-  response.json({
-    resource: [],
-  });
-});
+const surveyComplete = require('./_table/surveyComplete');
+surveyComplete(api);
 
 module.exports = api;

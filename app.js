@@ -15,7 +15,7 @@ app.use(function(request, response, next) {
   ];
 
   response.header('Access-Control-Allow-Origin', '*');
-  response.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
+  response.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS, PATCH');
   response.header('Access-Control-Allow-Headers', allowedHeaders.join(','));
 
   //intercepts OPTIONS method
