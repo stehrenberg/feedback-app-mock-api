@@ -17,7 +17,7 @@ api.patch('/', (request, response) => {
   changedTodos.forEach(changedTodo => {
     const todoIndexToBePatched = allTodos.findIndex(storedTodo => storedTodo.todo_id === changedTodo.todo_id);
     allTodos[todoIndexToBePatched].completed = changedTodo.completed;
-    
+
     responseArray.push(allTodos[todoIndexToBePatched]);
   });
 
@@ -30,6 +30,15 @@ api.get('/', (request, response) => {
   response.json({
     resource: allTodos,
   });
+});
+
+api.delete('/:todo_id', (request, response) => {
+  const todoId = request.params.todo_id;
+  const todoIndexToDelete = allTodos.findIndex(todo => todo.todo_id === todoId);
+  if (todoIndexToDelete > -1) {
+    allTodos.splice(todoIndexToDelete, 1);
+  }
+  response.sendStatus(200);
 });
 
 module.exports = api;

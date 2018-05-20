@@ -196,6 +196,10 @@ Updates the given todos and returns the patched todos
 }
 ```
 
+### `/api/v2/feedback_db/_table/todos/[todoId]`
+#### DELETE
+Removes the Todo with the given todo. Always returns HTTP Status `200`
+
 ### `/api/v2/feedback_db/_table/todos_[projectName]`
 #### GET
 Returns all the todos
