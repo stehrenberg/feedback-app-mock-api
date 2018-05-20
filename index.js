@@ -9,6 +9,9 @@ const api = express();
 const user = require('./api/user');
 api.use('/user', user);
 
+const feedbackDb = require('./api/feedbackDb');
+api.use('/feedback_db', feedbackDb);
+
 const app = require('./app');
 app.use('/api/v2', api);
 
