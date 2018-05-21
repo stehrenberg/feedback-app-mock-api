@@ -20,10 +20,17 @@ PORT=1337 VERSION=v4 npm start
 
 Version `v4` would mean, that the API url is `http://localhost:8080/api/v4`
 
+## Caveats
+Nothing is stored permanently. Once the server is restarted, any stored information is gone. You can alter
+the data available on startup by configuring the JSON files in the `config` folder.
+
 ## Config Files
 |File|Description|
 |----|-----------|
-|config/projects.json|List of all available projects. Will be used for `/api/v2/feedback_db/_table/customer_projects` and  `/api/v2/feedback_db/_table/projects`|
+|config/projects.json|List of all available projects.|
+|config/surveys.json|List of all surveys available on startup|
+|config/surveyResults.json|List of all surveys results available on startup|
+|config/todos.json|List of all todos available on startup|
 
 ## API
 
@@ -100,15 +107,15 @@ Alters a given survey and returns the patched survey
 
 ### `/api/v2/feedback_db/_table/survey_[projectName]`
 #### GET
-Returns all stored surveys
+Returns all surveys available. On startup these are te ones from `config/surveys.json`. Example:
 ```
 {
     "resource": [
-        {
-            "survey_id":"20180520-a",
-            "project_name":"a",
-            "created_at":""
-        }
+      {
+        "survey_id": "20180521-Die intolerante Isi",
+        "project_name": "Die intolerante Isi",
+        "created_at": ""
+      }
     ]
 }
 ```
@@ -143,25 +150,25 @@ Alters a given set of survey results and returns the patched survey results
 
 ### `/api/v2/feedback_db/_table/survey_result_[projectName]`
 #### GET
-Returns all stored survey results
+Returns all survey results available. On startuop these are the ones from `config/surveyResults.json`. Example:
 ```
 {  
    "resource":[  
-      {  
-         "survey_id":"20180520-a",
-         "question_id":1,
-         "question_answer":6.5
-      },
-      {  
-         "survey_id":"20180520-b",
-         "question_id":1,
-         "question_answer":8.5
-      },
-      {  
-         "survey_id":"20180520-a",
-         "question_id":2,
-         "question_answer":"Yes"
-      }
+        {
+          "survey_id": "20180521-Die intolerante Isi",
+          "question_id": 1,
+          "question_answer": 9
+        },
+        {
+          "survey_id": "20180521-Die intolerante Isi",
+          "question_id": 2,
+          "question_answer": 6
+        },
+        {
+          "survey_id": "20180521-Die intolerante Isi",
+          "question_id": 3,
+          "question_answer": "Website"
+        }
    ]
 }
 ```
@@ -207,21 +214,21 @@ Removes the Todo with the given todo. Always returns HTTP Status `200`
 
 ### `/api/v2/feedback_db/_table/todos_[projectName]`
 #### GET
-Returns all the todos
+Returns all the todos available. On startup these are the ones from `config/todos.json`. Example:
 ```
 {
     "resource": [
         {
-            "todo_id": "dd5c0437-3215-45d0-a17e-cbb9f5c6809c",
-            "survey_id": "20180521-a",
-            "text": "Foo",
+            "todo_id": "34b881fe-7923-4487-87f9-456adb99a635",
+            "survey_id": "20180521-Die intolerante Isi",
+            "text": "Create paper prototype example",
             "completed": false
         },
         {
-            "todo_id": "9c697aa7-6e5a-490d-94b8-6d7f610f5bbc",
-            "survey_id": "20180521-a",
-            "text": "Bar",
-            "completed":false
+            "todo_id": "6e217b42-815c-4cef-a946-cf816065ba75",
+            "survey_id": "20180521-Die intolerante Isi",
+            "text": "Invite customer to Daily",
+            "completed": true
         }
     ]
 }
