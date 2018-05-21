@@ -21,18 +21,8 @@ api.use('/_table/survey', survey);
 api.use(/^\/_table\/survey_(.*)$/, storeProjectNameForMiddleware);
 api.use(/^\/_table\/survey_(.*)$/, survey);
 
-api.get('/_table/customer_projects/', (request, response) => {
-  response.json({
-    resource: [
-      {
-        project_id: '1'
-      },
-      {
-        project_id: '2'
-      },
-    ],
-  });
-});
+const customerProjects = require('./_table/customerProjects');
+api.use('/_table/customer_projects/', customerProjects);
 
 api.get('/_table/projects', (request, response) => {
   // Activate if dynamic project name loading is needed
