@@ -1,7 +1,7 @@
 const express = require('express');
 const api = express();
 
-const allTodos = [];
+const allTodos = require('../../config/todos');
 
 api.post('/', (request, response) => {
   const todo = request.body.resource;
