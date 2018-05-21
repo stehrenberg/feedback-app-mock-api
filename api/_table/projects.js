@@ -1,6 +1,8 @@
 const express = require('express');
 const api = express();
 
+const projects = require('../../config/projects');
+
 api.get('/', (request, response) => {
   // Activate if dynamic project name loading is needed
   // const url = require('url');
@@ -9,16 +11,7 @@ api.get('/', (request, response) => {
   // const ids = idsAsTrimmedString.split(',');
 
   response.json({
-    resource: [
-      {
-        project_id: '1',
-        project_name: 'Brontales Projekt'
-      },
-      {
-        project_id: '2',
-        project_name: 'Normales Projekt'
-      },
-    ],
+    resource: projects,
   });
 });
 

@@ -20,6 +20,11 @@ PORT=1337 VERSION=v4 npm start
 
 Version `v4` would mean, that the API url is `http://localhost:8080/api/v4`
 
+## Config Files
+|File|Description|
+|----|-----------|
+|config/projects.json|List of all available projects. Will be used for `/api/v2/feedback_db/_table/customer_projects` and  `/api/v2/feedback_db/_table/projects`|
+
 ## API
 
 ### `/api/v2/user/session`
@@ -47,7 +52,7 @@ Any other response will return
 
 ### `/api/v2/feedback_db/_table/customer_projects`
 #### GET
-Always returns
+Will return the project_ids of the projects defined in `config/projects.json`. Example:
 ```
 {
     resource: [
@@ -63,17 +68,17 @@ Always returns
 
 ### `/api/v2/feedback_db/_table/projects`
 #### GET
-Always returns
+Will return the projects defined in `config/projects.json`. Example:
 ```
 {
     resource: [
       {
         project_id: '1',
-        project_name: 'Brontales Projekt'
+        project_name: 'Die intolerante Isi'
       },
       {
         project_id: '2',
-        project_name: 'Normales Projekt'
+        project_name: 'Bärenwasser'
       }
     ]
 }
