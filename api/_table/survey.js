@@ -1,7 +1,7 @@
-const allSurveys = [];
-
 const express = require('express');
 const api = express();
+
+const allSurveys = require('../../config/surveys');
 
 api.get('/', (request, response) => {
   const projectName = request.projectName.toLowerCase();
