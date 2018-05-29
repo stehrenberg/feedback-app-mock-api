@@ -5,6 +5,7 @@ const allTodos = require('../../config/todos');
 
 api.post('/', (request, response) => {
   const todo = request.body.resource;
+  todo.created_at = new Date().toUTCString();
   allTodos.push(todo);
   response.json({
     resource: todo,

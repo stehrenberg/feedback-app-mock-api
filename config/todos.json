@@ -3,48 +3,56 @@
     "todo_id": "34b881fe-7923-4487-87f9-456adb99a635",
     "survey_id": "20180508-Die intolerante Isi",
     "text": "Create paper prototype example",
-    "completed": false
+    "completed": false,
+    "created_at": "2018-05-15 22:00:00"
   },
   {
     "todo_id": "6e217b42-815c-4cef-a946-cf816065ba75",
     "survey_id": "20180508-Die intolerante Isi",
     "text": "Invite customer to Daily",
-    "completed": true
+    "completed": true,
+    "created_at": "2018-05-15 22:00:00"
   },
   {
     "todo_id": "9237655d-fe1b-483b-8048-d29ccbd0b5e7",
     "survey_id": "20180508-Die intolerante Isi",
     "text": "Invite customer to refinement",
-    "completed": false
+    "completed": false,
+    "created_at": "2018-05-15 22:00:00"
   },
   {
     "todo_id": "0e3971f5-f8c2-4f82-8324-36855d267760",
     "survey_id": "20180508-Die intolerante Isi",
     "text": "Give customer access to staging system",
-    "completed": false
+    "completed": false,
+    "created_at": "2018-05-15 22:00:00"
   },
   {
     "todo_id": "34b881fe-7923-4487-87f9-456adb99a636",
     "survey_id": "20180507-ING DiBa",
     "text": "Create paper prototype example",
-    "completed": false
+    "completed": false,
+    "created_at": "2018-05-15 22:00:00"
   },
   {
     "todo_id": "6e217b42-815c-4cef-a946-cf816065ba76",
     "survey_id": "20180507-ING DiBa",
     "text": "Invite customer to Daily",
-    "completed": true
+    "completed": true,
+    "created_at": "2018-05-15 22:00:00"
   },
   {
     "todo_id": "9237655d-fe1b-483b-8048-d29ccbd0b5e6",
     "survey_id": "20180507-ING DiBa",
     "text": "Invite customer to refinement",
-    "completed": false
+    "completed": false,
+    "created_at": "2018-05-15 22:00:00"
   },
   {
     "todo_id": "0e3971f5-f8c2-4f82-8324-36855d267766",
     "survey_id": "20180507-ING DiBa",
     "text": "Give customer access to staging system",
-    "completed": false
+    "completed": false,
+    "created_at": "2018-05-15 22:00:00"
   }
 ]

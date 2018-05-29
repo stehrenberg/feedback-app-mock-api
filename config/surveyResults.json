@@ -24,15 +24,15 @@
     "question_id": 5,
     "question_answer": "Prototypes"
   },
-  {
+    {
     "survey_id": "20180508-Die intolerante Isi",
     "question_id": 6,
-    "question_answer": "See, if the website is displayed on Windows Mobile"
+    "question_answer": "Paper Prototypes"
   },
   {
     "survey_id": "20180508-Die intolerante Isi",
     "question_id": 7,
-    "question_answer": "Paper Prototypes"
+    "question_answer": "See if the website is displayed on Windows Mobile"
   },
   {
     "survey_id": "20180508-Die intolerante Isi",
@@ -79,15 +79,15 @@
     "question_id": 5,
     "question_answer": "Prototypes"
   },
-  {
+      {
     "survey_id": "20180507-ING DiBa",
     "question_id": 6,
-    "question_answer": "See, if the website is displayed on Windows Mobile"
+    "question_answer": "Paper Prototypes"
   },
   {
     "survey_id": "20180507-ING DiBa",
     "question_id": 7,
-    "question_answer": "Paper Prototypes"
+    "question_answer": "See if the website is displayed on Windows Mobile"
   },
   {
     "survey_id": "20180507-ING DiBa",
@@ -97,7 +97,7 @@
   {
     "survey_id": "20180507-ING DiBa",
     "question_id": 9,
-    "question_answer": 6
+    "question_answer": ""
   },
   {
     "survey_id": "20180507-ING DiBa",
@@ -107,6 +107,6 @@
   {
     "survey_id": "20180507-ING DiBa",
     "question_id": 11,
-    "question_answer": ""
+    "question_answer": "6"
   }
 ]
